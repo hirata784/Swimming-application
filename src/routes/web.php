@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SwimmingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [SwimmingController::class, 'index']);
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
