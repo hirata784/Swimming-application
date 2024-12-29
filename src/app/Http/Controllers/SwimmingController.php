@@ -10,4 +10,9 @@ class SwimmingController extends Controller
     {
         return view('input');
     }
+
+    public function confirm()
+    {
+        return view('confirm');
+    }
 }

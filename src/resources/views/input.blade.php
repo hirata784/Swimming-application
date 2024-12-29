@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
@@ -16,67 +16,95 @@
         </div>
     </header>
 
-    <h2>登録画面</h2>
+    <h2>入力画面</h2>
 
-    <form action="">
+    <form action="/confirm" method="post">
+        @csrf
         <!-- 入力内容 -->
         <div class="Registration">
             <div class="Registration_inner">
-                <p>名前を入力して下さい。</p>
-                <input type="text" name="" id="">
-
-                <p>年齢を入力して下さい。</p>
-                <input type="text" name="" id="">
-
-                <p>性別を選択して下さい。</p>
-                <div>
-                    <input type="radio" name="gender" id="genderChoice1" value="man">
-                    <label for="genderChoice1">男性</label>
-                    <input type="radio" name="gender" id="genderChoice2" value="woman">
-                    <label for="genderChoice2">女性</label>
+                <div class="name">
+                    <p>名前を入力して下さい。<span>必須</span></p>
+                    <input type="text" name="" id="">
                 </div>
 
-
-                <p>電話番号を入力して下さい。</p>
-                <input type="text" name="" id="">
-
-                <p>参加希望の曜日を選択して下さい。(最大３つ)</p>
-                <div>
-                    <input type="checkbox" name="week" id="sunday" value="sunday">
-                    <label for="sunday">日</label>
-
-                    <input type="checkbox" name="week" id="monday" value="monday">
-                    <label for="monday">月</label>
-
-                    <input type="checkbox" name="week" id="tuesday" value="tuesday">
-                    <label for="tuesday">火</label>
-
-                    <input type="checkbox" name="week" id="wednesday" value="wednesday">
-                    <label for="wednesday">水</label>
-
-                    <input type="checkbox" name="week" id="Thursday" value="Thursday">
-                    <label for="Thursday">木</label>
-
-                    <input type="checkbox" name="week" id="friday" value="friday">
-                    <label for="friday">金</label>
-
-                    <input type="checkbox" name="week" id="Saturday" value="Saturday">
-                    <label for="Saturday">土</label>
+                <div class="age">
+                    <p>年齢を入力して下さい。<span>必須</span></p>
+                    <input type="text" name="" id="">
                 </div>
 
-                <p>コースを選択して下さい。</p>
-                <select name="course">
-                    <option value="">選択して下さい</option>
-                    <option value="Beginner">初級コース</option>
-                    <option value="Intermediate">中級コース</option>
-                    <option value="advanced">上級コース</option>
-                </select>
+                <div class="genders">
+                    <p>性別を選択して下さい。<span>必須</span></p>
+                    <?php
+                    // 連想配列にデータを入れる
+                    $gender_items = array(
+                        'man' => '男性',
+                        'woman' => '女性'
+                    )
+                    ?>
+                    @foreach($gender_items as $itemKey => $itemValue)
+                    <div>
+                        <input type="radio" name="gender" id="{{ $itemKey }}" value="{{ $itemKey }}">
+                        <label for="{{ $itemKey }}">{{ $itemValue }}</label>
+                    </div>
+                    @endforeach
+                </div>
 
-                <p>その他コメントがあればを入力して下さい。</p>
-                <textarea type="textarea" rows="5" cols="33"></textarea>
+                <div class="tel">
+                    <p>電話番号を入力して下さい。<span>必須</span></p>
+                    <input type="text" name="" id="">
+                </div>
+
+                <div class="weeks">
+                    <p>参加希望の曜日を選択して下さい。(最大３つ)<span>必須</span></p>
+                    <?php
+                    // 連想配列にデータを入れる
+                    $week_items = array(
+                        'sunday' => '日',
+                        'monday' => '月',
+                        'tuesday' => '火',
+                        'wednesday' => '水',
+                        'Thursday' => '木',
+                        'friday' => '金',
+                        'Saturday' => '土'
+                    )
+                    ?>
+                    @foreach($week_items as $itemKey => $itemValue)
+                    <div>
+                        <input type="checkbox" name="week" id="{{ $itemKey }}" value="{{ $itemKey }}">
+                        <label for="{{ $itemKey }}">{{ $itemValue }}</label>
+                    </div>
+                    @endforeach
+                </div>
+
+                <div class="courses">
+                    <p>コースを選択して下さい。<span>必須</span></p>
+                    <?php
+                    // 連想配列にデータを入れる
+                    $course_items = array(
+                        'choose' => '選択して下さい',
+                        'Beginner' => '初級コース',
+                        'Intermediate' => '中級コース',
+                        'advanced' => '上級コース'
+                    )
+                    ?>
+                    <select name="course">
+                        @foreach($course_items as $itemKey => $itemValue)
+                        <option value="{{ $itemKey }}">{{ $itemValue }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="comment">
+                    <p>その他コメントがあればを入力して下さい。</p>
+                    <textarea type="textarea" rows="5" cols="65"></textarea>
+                </div>
+
             </div>
         </div>
-        <input type="submit" name="" id="" value="送信">
+        <div>
+            <button class="form_button" type="submit">送信</button>
+        </div>
     </form>
 
 

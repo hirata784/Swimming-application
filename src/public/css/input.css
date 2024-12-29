@@ -12,3 +12,56 @@ header {
     font-size: 24px;
     text-decoration: none;
 }
+
+h2 {
+    width: 463px;
+    text-align: center;
+    margin: 10px auto;
+    padding: 10px;
+    border-bottom: gainsboro solid 3px;
+}
+
+form {
+    width: fit-content;
+    height: 900px;
+    margin: 0 auto;
+}
+
+p {
+    margin: 0;
+    font-size: 20px;
+}
+
+span {
+    background: #fafafa;
+    color: #aaa;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.name,
+.age,
+.genders,
+.tel,
+.weeks,
+.courses,
+.comment {
+    margin-bottom: 30px;
+}
+
+.form_button {
+    display: block;
+    padding: 10px 50px;
+    border: none;
+    background-color: green;
+    color: white;
+    margin: 0 auto;
+    cursor: pointer;
+    border-radius: 7px;
+    box-shadow: 0 6px 0 black;
+}
+
+.form_button:active {
+    box-shadow: none;
+    transform: translateY(6px);
+}
