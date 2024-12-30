@@ -23,14 +23,14 @@
         <!-- 入力内容 -->
         <div class="Registration">
             <div class="Registration_inner">
-                <div class="name">
+                <div class="names">
                     <p>名前を入力して下さい。<span>必須</span></p>
-                    <input type="text" name="" id="">
+                    <input type="text" name="name" id="">
                 </div>
 
-                <div class="age">
+                <div class="ages">
                     <p>年齢を入力して下さい。<span>必須</span></p>
-                    <input type="text" name="" id="">
+                    <input type="text" name="age" id="">
                 </div>
 
                 <div class="genders">
@@ -50,9 +50,9 @@
                     @endforeach
                 </div>
 
-                <div class="tel">
+                <div class="tels">
                     <p>電話番号を入力して下さい。<span>必須</span></p>
-                    <input type="text" name="" id="">
+                    <input type="text" name="tel" id="">
                 </div>
 
                 <div class="weeks">
@@ -60,13 +60,13 @@
                     <?php
                     // 連想配列にデータを入れる
                     $week_items = array(
-                        'sunday' => '日',
-                        'monday' => '月',
-                        'tuesday' => '火',
-                        'wednesday' => '水',
-                        'Thursday' => '木',
-                        'friday' => '金',
-                        'Saturday' => '土'
+                        'sunday' => '日曜日',
+                        'monday' => '月曜日',
+                        'tuesday' => '火曜日',
+                        'wednesday' => '水曜日',
+                        'Thursday' => '木曜日',
+                        'friday' => '金曜日',
+                        'Saturday' => '土曜日'
                     )
                     ?>
                     @foreach($week_items as $itemKey => $itemValue)
@@ -95,9 +95,9 @@
                     </select>
                 </div>
 
-                <div class="comment">
+                <div class="comments">
                     <p>その他コメントがあればを入力して下さい。</p>
-                    <textarea type="textarea" rows="5" cols="65"></textarea>
+                    <textarea type="textarea" name="comment" rows="5" cols="65"></textarea>
                 </div>
 
             </div>

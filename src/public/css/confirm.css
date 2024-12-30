@@ -30,14 +30,25 @@ p {
     margin: 0;
 }
 
-.name,
-.age,
+.names,
+.ages,
 .genders,
-.tel,
+.tels,
 .weeks,
 .courses,
-.comment {
+.comments {
     margin: 15px 0;
+}
+
+.name,
+.age,
+.gender,
+.tel,
+.week,
+.course,
+.comment {
+    border: none;
+    outline: none;
 }
 
 .form_button {

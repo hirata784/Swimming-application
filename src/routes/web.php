@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [SwimmingController::class, 'index']);
 Route::post('/confirm', [SwimmingController::class, 'confirm']);
+Route::get('/completion', [SwimmingController::class, 'completion']);
 
 // Route::get('/', function () {
 //     return view('welcome');

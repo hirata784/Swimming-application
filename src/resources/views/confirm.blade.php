@@ -17,42 +17,42 @@
     </header>
 
     <h2>以下の内容で申し込みます。</h2>
-    <form action="">
+    <form action="/completion" method="get">
         @csrf
         <div class="confirm_inner">
-            <div class="name">
+            <div class="names">
                 <p>名前</p>
-                <div>サンプル太郎</div>
+                <input type="text" class="name" name="name" value="{{ $entry['name'] }}" readonly>
             </div>
 
-            <div class="age">
+            <div class="ages">
                 <p>年齢</p>
-                <div>20</div>
+                <input type="text" class="age" name="age" value="{{ $entry['age'] }}" readonly>
             </div>
 
             <div class="genders">
                 <p>性別</p>
-                <div>男性</div>
+                <input type="text" class="gender" name="gender" value="{{ $entry['gender'] }}" readonly>
             </div>
 
-            <div class="tel">
+            <div class="tels">
                 <p>電話番号</p>
-                <div>0001112345</div>
+                <input type="text" class="tel" name="tel" value="{{ $entry['tel'] }}" readonly>
             </div>
 
             <div class="weeks">
                 <p>参加曜日</p>
-                <div>月,水,金</div>
+                <input type="text" class="week" name="week" value="{{ $entry['week'] }}" readonly>
             </div>
 
             <div class="courses">
                 <p>コース</p>
-                <div>中級コース</div>
+                <input type="text" class="course" name="course" value="{{ $entry['course'] }}" readonly>
             </div>
 
-            <div class="comment">
+            <div class="comments">
                 <p>コメント</p>
-                <div>よろしくお願いします。</div>
+                <input type="text" class="comment" name="comment" value="{{ $entry['comment'] }}" readonly>
             </div>
 
             <div>

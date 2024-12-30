@@ -39,13 +39,13 @@ span {
     font-size: 15px;
 }
 
-.name,
-.age,
+.names,
+.ages,
 .genders,
-.tel,
+.tels,
 .weeks,
 .courses,
-.comment {
+.comments {
     margin-bottom: 30px;
 }
 

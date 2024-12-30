@@ -11,8 +11,14 @@ class SwimmingController extends Controller
         return view('input');
     }
 
-    public function confirm()
+    public function confirm(Request $request)
     {
-        return view('confirm');
+        $entry = $request->only(['name', 'age', 'gender', 'tel', 'week', 'course', 'comment']);
+        return view('confirm', compact('entry'));
+    }
+
+    public function completion()
+    {
+        return view('completion');
     }
 }
