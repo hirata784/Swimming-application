@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\SwimmingRequest as RequestsSwimmingRequest;
+use Illuminate\Http\Requests\SwimmingRequest;
 
 class SwimmingController extends Controller
 {
@@ -11,7 +12,7 @@ class SwimmingController extends Controller
         return view('input');
     }
 
-    public function confirm(Request $request)
+    public function confirm(RequestsSwimmingRequest $request)
     {
         $entry = $request->only(['name', 'age', 'gender', 'tel', 'week', 'course', 'comment']);
         return view('confirm', compact('entry'));

@@ -49,6 +49,10 @@ span {
     margin-bottom: 30px;
 }
 
+.form_error{
+    color: red;
+}
+
 .form_button {
     display: block;
     padding: 10px 50px;

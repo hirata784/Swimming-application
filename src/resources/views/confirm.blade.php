@@ -41,8 +41,12 @@
             </div>
 
             <div class="weeks">
-                <p>参加曜日</p>
-                <input type="text" class="week" name="week" value="{{ $entry['week'] }}" readonly>
+                <p>参加希望日</p>
+                @foreach($entry['week'] as $itemKey => $itemValue)
+                <div>
+                    <input type="text" class="week" name="week" value="{{ $itemValue }}" readonly>
+                </div>
+                @endforeach
             </div>
 
             <div class="courses">
