@@ -17,7 +17,7 @@
     </header>
 
     <h2>以下の内容で申し込みます。</h2>
-    <form action="/completion" method="get">
+    <form action="/completion" method="post">
         @csrf
         <div class="confirm_inner">
             <div class="names">
@@ -44,7 +44,7 @@
                 <p>参加希望日</p>
                 @foreach($entry['week'] as $itemKey => $itemValue)
                 <div>
-                    <input type="text" class="week" name="week" value="{{ $itemValue }}" readonly>
+                    <input type="text" class="week" name="week[]" value="{{ $itemValue }}" readonly>
                 </div>
                 @endforeach
             </div>

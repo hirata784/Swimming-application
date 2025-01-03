@@ -116,7 +116,7 @@
                     ?>
                     <select name="course">
                         @foreach($course_items as $itemKey => $itemValue)
-                        <option value="{{ $itemValue }}" @if($itemValue ==old("course")) selected @endif>{{ $itemValue }}</option>
+                        <option value="{{ $itemValue }}" @if($itemValue==old("course")) selected @endif>{{ $itemValue }}</option>
                         @endforeach
                     </select>
                     <div class="form_error">
@@ -128,7 +128,7 @@
 
                 <div class="comments">
                     <p>その他コメントがあればを入力して下さい。</p>
-                    <textarea type="textarea" name="comment" rows="5" cols="65"></textarea>
+                    <textarea type="textarea" name="comment" rows="5" cols="65">{{ old('comment') }}</textarea>
                 </div>
 
             </div>
