@@ -9,7 +9,33 @@ class SwimmingController extends Controller
 {
     public function index()
     {
-        return view('input');
+        // 連想配列にデータを入れる
+        // 性別
+        $gender_items = array(
+            'man' => '男性',
+            'woman' => '女性'
+        );
+
+        // 曜日
+        $week_items = array(
+            'sunday' => '日曜日',
+            'monday' => '月曜日',
+            'tuesday' => '火曜日',
+            'wednesday' => '水曜日',
+            'Thursday' => '木曜日',
+            'friday' => '金曜日',
+            'Saturday' => '土曜日'
+        );
+
+        // コース
+        $course_items = array(
+            'choose' => '',
+            'Beginner' => '初級コース',
+            'Intermediate' => '中級コース',
+            'advanced' => '上級コース'
+        );
+
+        return view('input', compact('gender_items', 'week_items', 'course_items'));
     }
 
     public function confirm(SwimmingRequest $request)
@@ -23,18 +49,17 @@ class SwimmingController extends Controller
     {
         $week = $request->only('week');
 
-        //     dd($week);
-
-        // $i = 0;
-        // foreach ($week as $key => $value) {
-        //     $i++;
-        // $request->merge(['week' . $i => $value]);
-        // }
+        // 参加希望日の選択数が2以下の時、要素追加(空白)
+        if (count($week['week']) <= 2) {
+            for ($i = 0; $i <= 3 - count($week['week']); $i++) {
+                array_push($week['week'], '');
+            }
+        }
 
         // week1, week2, week3を追加
-        $request->merge(['week1' => '日曜日']);
-        $request->merge(['week2' => '月曜日']);
-        $request->merge(['week3' => '火曜日']);
+        for ($i = 0; $i <= 2; $i++) {
+            $request->merge(['week' . ($i + 1) => $week['week'][$i]]);
+        }
 
         $swim = $request->only(['name', 'age', 'gender', 'tel', 'week1', 'week2', 'week3', 'course', 'comment']);
         Swimming::create($swim);

@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Swimming extends Model
 {
-    // use HasFactory;
     protected $table = 'swims';
     protected $fillable = [
         'id',
